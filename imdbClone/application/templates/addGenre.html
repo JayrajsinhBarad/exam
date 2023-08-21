@@ -1,0 +1,63 @@
+{% extends 'home.html' %} 
+{% load static %}
+
+{% block title %}Add Genre{% endblock title %}
+
+{% block content %}
+<div class="container" style="width: 800px">
+<!--Section: Contact v.2-->
+<section class="mb-4">
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Add Genre</h2>
+  <form
+  id="contact-form"
+  name="contact-form"
+  method="post"
+>
+{% csrf_token %}
+  <!--Grid row-->
+  <div class="row">
+    <div class="col-md-12">
+        <div class="md-form mb-0">
+            <label for="genre" class="">Movie Genre</label>
+            <input
+              type="text"
+              id="genre"
+              name="genre"
+              class="form-control"
+            />
+          </div>
+    </div>
+  </div>
+  <!--Grid row-->
+
+  <br />
+  <!--Grid row-->
+  <div class="row">
+    <!--Grid column-->
+    <div class="col-md-12">
+      <div class="md-form">
+        <label for="gDiscription">Genre description</label>
+        <textarea
+          type="text"
+          id="gDiscription"
+          name="discription"
+          rows="2"
+          class="form-control md-textarea"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="text-center text-md-left">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  <!--Grid row-->
+</form>
+</section>
+<!--Section: Contact v.2-->
+</div>
+{% if message %}
+<script>alert("{{message}}")</script>
+{% endif %}
+{% endblock content %}
